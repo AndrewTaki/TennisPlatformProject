@@ -1,0 +1,61 @@
+﻿@page "/Login"
+@model LoginModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1></h1>
+<div class="container d-flex justify-content-center align-items-center mt-5" style="height: 70vh;">
+    <!-- Login card -->
+    <div class="card" style="width: 25rem;">
+        <img class="card-img-top" src="/images/login.jpg" alt="Login Image">
+        <div class="card-body">
+            <h5 class="card-title">Login</h5>
+            <p class="card-text">Login with your email address</p>
+            <!-- Form inside the card -->
+            <form method="get">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email Address:</label>
+                    <input type="email" class="form-control" id="email" asp-for="SearchString" placeholder="Enter email">
+                </div>
+                <button type="submit" class="btn btn-primary">Login</button>
+            </form>
+          
+        </div>
+    </div>
+</div>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.ClubMembers)
+        {
+            <tr>
+                
+                
+                
+            </tr>
+        }
+    </tbody>
+</table>
+@if (!string.IsNullOrEmpty(ViewData["InvalidEmailMessage"] as string))
+{
+    <div class="alert alert-danger">@ViewData["InvalidEmailMessage"]</div>
+}
+@{
+    bool showNavigation = string.IsNullOrEmpty(ViewData["InvalidEmailMessage"] as string);
+}
+
+@if (showNavigation)
+{
+    
+    
+}

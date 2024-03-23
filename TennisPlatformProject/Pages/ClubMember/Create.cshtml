@@ -1,0 +1,59 @@
+﻿@page
+@model TennisPlatformProject.Pages.ClubMember.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>ClubMembers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ClubMembers.MemberId" class="control-label"></label>
+                <input asp-for="ClubMembers.MemberId" class="form-control" />
+                <span asp-validation-for="ClubMembers.MemberId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClubMembers.FirstName" class="control-label"></label>
+                <input asp-for="ClubMembers.FirstName" class="form-control" />
+                <span asp-validation-for="ClubMembers.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClubMembers.LastName" class="control-label"></label>
+                <input asp-for="ClubMembers.LastName" class="form-control" />
+                <span asp-validation-for="ClubMembers.LastName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClubMembers.Gender" class="control-label"></label>
+                <input asp-for="ClubMembers.Gender" class="form-control" />
+                <span asp-validation-for="ClubMembers.Gender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClubMembers.MobilNumber" class="control-label"></label>
+                <input asp-for="ClubMembers.MobilNumber" class="form-control" />
+                <span asp-validation-for="ClubMembers.MobilNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClubMembers.Email" class="control-label"></label>
+                <input asp-for="ClubMembers.Email" class="form-control" />
+                <span asp-validation-for="ClubMembers.Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
